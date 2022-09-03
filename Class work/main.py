@@ -1428,8 +1428,29 @@
 # a = {'A' + i[1:] if i[0] == 'a' else 'B' + i[1:] for i in r if i[1] == 'c'}
 # print(a)
 
-print('Вносим изменения')
+# print('Вносим изменения')
+#
+# print('Вносим изменения в склонированный проект')
+#
+# print('PyCharm')
 
-print('Вносим изменения в склонированный проект')
+#                                             Занятие № 13
 
-print('PyCharm')
+# x = {'a': 1, 'b': 2}
+# y = {'b': 3, 'c': 4}
+# # z = x.copy()
+# # z.update(y)
+# z = x | y
+# print(z)
+
+d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+
+new_d = dict()
+new_d['name'] = d.pop('name')
+new_d['salary'] = d.pop('salary')
+
+print(d)
+print(new_d)
+
+
+
