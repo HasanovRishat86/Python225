@@ -1432,7 +1432,7 @@
 
 # print('Вносим изменения в склонированный проект')
 
-print('PyCharm')
+# print('PyCharm')
 
 
 #                                             Занятие № 11
@@ -1454,13 +1454,13 @@ print('PyCharm')
 
 # a = {0, 1, 2, 3}
 # b = {4, 3, 2, 1}
-# # c = a.union(b)
-# # c = a | b
-# # c = a & b
-# # c = b - a
+# c = a.union(b)
+# c = a | b
+# c = a & b
+# c = b - a
 # c = a ^ b
-# # a |= b
-# # a &= b
+# a |= b
+# a &= b
 # print(c)
 # print(a)
 
@@ -1472,8 +1472,8 @@ print('PyCharm')
 # s6 = {7, 8}
 # s7 = {9, 8}
 #
-# # s = s1.union(s2, s3, s4, s5, s6, s7)
-# s = s1 | s2 | s3 | s4 | s5 | s6 | s7
+# s = s1.union(s2, s3, s4, s5, s6, s7)
+# # s = s1 | s2 | s3 | s4 | s5 | s6 | s7
 # print(s)
 # print(len(s))
 # print(max(s))
@@ -1607,6 +1607,7 @@ print('PyCharm')
 # print("B =", v)
 # value = d.get("E", "False")
 # d.clear()
+# print(d)
 # d2 = d.copy()
 #
 # print("D =", d)
@@ -1620,21 +1621,21 @@ print('PyCharm')
 # print("D2 =", d2)
 
 # d = {'A': 1, "B": 2, "C": 3}
-# # a = d.items()
-# # print(a)
-# # b = d.keys()
-# # print(b)
-# # c = d.values()
-# # print(c)
-# # # print(d['A'] + d["B"])
-#
-# # for key, val in d.items():
-# #     print(key, "->", val)
-# # item = d.pop("B", 5)
-# # print(item)
-# # print(d)
-# # item = d.setdefault("B", 5)
-# # print(item)
+# a = d.items()
+# print(a)
+# b = d.keys()
+# print(b)
+# c = d.values()
+# print(c)
+# print(d['A'] + d["B"])
+
+# for key, val in d.items():
+#     print(key, "->", val)
+# item = d.pop("B", 5)
+# print(item)
+# print(d)
+# item = d.setdefault("B", 5)
+# print(item)
 # d.update([('R', 7), ('Q', 9)])
 # print(d)
 
@@ -1642,19 +1643,19 @@ print('PyCharm')
 
 # x = {'a': 1, 'b': 2}
 # y = {'b': 3, 'c': 4}
-# # z = x.copy()
-# # z.update(y)
+# z = x.copy()
+# z.update(y)
 # z = x | y
 # print(z)
-#
-# d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
-#
-# new_d = dict()
-# new_d['name'] = d.pop('name')
-# new_d['salary'] = d.pop('salary')
-#
-# print(d)
-# print(new_d)
+
+d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+
+new_d = dict()
+new_d['name'] = d.pop('name')
+new_d['salary'] = d.pop('salary')
+
+print(d)
+print(new_d)
 
 
 
