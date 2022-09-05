@@ -1707,16 +1707,125 @@
 # a = list(b.items())
 # print(a)
 
-a = ['one', 1, 2, 3, 'two', 10, 20, 'three', 15, 36, 60, 'four', -20]
+# a = ['one', 1, 2, 3, 'two', 10, 20, 'three', 15, 36, 60, 'four', -20]
+#
+# d = dict()
+# s = None
+#
+# for i in a:
+#     if type(i) == str:
+#         d[i] = []  # d['one'] = []
+#         s = i      # s = 'one'
+#     else:
+#         d[s].append(i)
+# print(d)
 
-d = dict()
-s = None
+# zip()
 
-for i in a:
-    if type(i) == str:
-        d[i] = []  # d['one'] = []
-        s = i      # s = 'one'
-    else:
-        d[s].append(i)
-print(d)
+# d = dict(zip([12, 1, 2], ['Dec', 'Jan', 'Feb']))
+# print(d)
+# print(type(d))
+
+# a = ['Dec', 'Jan', 'Feb']
+# b = [12, 1, 2]
+# d = {k: v for k, v in zip(b, a)}
+# print(d)
+
+# a = ['a', 'b', 'c']
+# b = [12, 1, 2]
+# c = [4.0, 5.0, 6.0]
+# q = zip(a, b, c)
+# print(list(q))
+
+# print(list(zip(range(5), range(100))))
+
+# one = {'name': 'Igor', 'last_name': 'Smith', 'job': 'Consultant'}
+# two = {'name': 'Olga', 'last_name': 'Doe', 'job': 'Manager'}
+#
+# for (k1, v1), (k2, v2) in zip(one.items(), two.items()):
+#     print(k1, '->', v1)
+#     print(k2, '->', v2)
+
+# Распаковка последовательности
+# pairs = [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]
+# a, b = zip(*pairs)
+# print(a)
+# print(b)
+
+# month = ['January', 'February', 'March']
+# total_sales = [52000.00, 51000.00, 48000.00]
+# prod_cost = [46800.00, 45900.00, 43200.00]
+#
+# for sales, costs, m in zip(total_sales, prod_cost, month):
+#     profit = sales - costs
+#     print('Общая прибыль в', m, '=', profit)
+
+# one = {'apple': 20, 'orange': 35, 'pepper': 60}
+# two = {'pepper': 40, 'onion': 55}
+# print({**two, **one})
+# {'pepper': 40, 'onion': 55,'apple': 20, 'orange': 35}
+
+# for i in range(6):
+#     print(i)
+#
+# colors = ['red', 'yellow', 'green']
+# j = 1
+# for i in colors:
+#     print(j, i)
+#     j += 1
+
+# colors = ['red', 'yellow', 'green']
+# for j, i in enumerate(colors, 1):
+#     print(j, i)
+
+# num_list = [1, 2, 3, 4, 5]
+# i = iter(num_list)
+# print(i)
+# print(next(i))
+# print(next(i))
+# print(next(i))
+# print(next(i))
+# print(next(i, "STOP"))
+# print(next(i, "STOP"))
+
+# a = [1, 2, 3]
+# b = [*a, 4, 5, 6]
+# print(b)
+
+# def func(*args):
+#     return args
+#
+# print(func(2))
+# print(func(2, 1, 3))
+
+# def summa(*params):
+#     res = 0
+#     for i in params:
+#         res += i
+#     return res
+#
+# print(summa(1, 2, 3, 4, 5))
+# print(summa(7, 3))
+
+# def to_dict(*args):
+#     return {i: i for i in args}
+#
+# print(to_dict(1, 2, 3, 4))
+# print(to_dict('grey', (2, 17), 3.11, -4))
+
+# def ch(*args):
+#     res = []
+#     sr_ar = sum(args) / len(args)
+#     print(sr_ar)
+#
+#     for i in args:
+#         if i < sr_ar:
+#             res.append(i)
+#
+#     return res
+#
+#
+# print(ch(1, 2, 3, 4, 5, 6, 7, 8, 9))
+# print(ch(3, 6, 1, 9, 5))
+
 
