@@ -1648,14 +1648,75 @@
 # z = x | y
 # print(z)
 
-d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+# d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+#
+# new_d = dict()
+# new_d['name'] = d.pop('name')
+# new_d['salary'] = d.pop('salary')
+#
+# print(d)
+# print(new_d)
 
-new_d = dict()
-new_d['name'] = d.pop('name')
-new_d['salary'] = d.pop('salary')
+# a = {
+#     'First':{
+#         1: 'one',
+#         2: 'two',
+#         3: 'three'
+#     },
+#     'Second':{
+#         4: 'four',
+#         5: 'five'
+#     }
+# }
+# print(a)
+# for x in a:
+#     print(x)
+#     for y in a[x]:
+#         print('\t', y, ': ', a[x][y], sep='')
 
+# sales = {
+#     'John': {'N': 3056, 'S': 8463, 'E': 8441, 'W': 2694},
+#     'Tom': {'N': 4832, 'S': 6786, 'E': 4737, 'W': 3612},
+#     'Ann': {'N': 5239, 'S': 4802, 'E': 5820, 'W': 1859},
+#     'Fiona': {'N': 3904, 'S': 3645, 'E': 8821, 'W': 2451}
+# }
+#
+# for x in sales:
+#     print(x)
+#     for y in sales[x]:
+#         print('\t', y, ': ', sales[x][y], sep='')
+#
+# person = input('Имя: ')
+# region = input('Регион: ')
+# print(sales[person][region])
+# data = int(input('Новое значение: '))
+# sales[person][region] = data
+# print(sales[person])
+
+# data = {'один': 1, 'два': 2, 'три': 3, 'четыре': 4}
+# d = {v: k for k, v in data.items() if v <= 2}
+# print(d)
+# data['один'] = 5
+# print(data)
+# print(d)
+
+# s = 'Hello'
+# b = {i: i * 3 for i in s}
+# print(b)
+#
+# a = list(b.items())
+# print(a)
+
+a = ['one', 1, 2, 3, 'two', 10, 20, 'three', 15, 36, 60, 'four', -20]
+
+d = dict()
+s = None
+
+for i in a:
+    if type(i) == str:
+        d[i] = []  # d['one'] = []
+        s = i      # s = 'one'
+    else:
+        d[s].append(i)
 print(d)
-print(new_d)
-
-
 
