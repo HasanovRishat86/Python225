@@ -21,23 +21,19 @@
 
 #                                  Задача № 3
 
-col = int(input('Введите количество студентов: '))
-d = dict()
-j = 1
-summ = 0
-for i in range(col):
-    print(j, end='')
-    name = str(input('-й студент: '))
-    ball = int(input('Балл: '))
-    summ = summ + ball
-    # d[name].append(ball)
-    j += 1
-sred = summ / col
-print('Средний балл:', sred, '. Студенты с баллом выше среднего:')
-for k, v in d:
-    if d[k][v] > sred:
-        print(d[k])
-
-
-
-
+# col = int(input('Введите количество студентов: '))
+# d = {}
+# j = 1
+# summ = 0
+# for i in range(col):
+#     print(j, end='')
+#     name = str(input('-й студент: '))
+#     ball = float(input('Балл: '))
+#     summ = summ + ball
+#     d[ball] = name
+#     j += 1
+# sred = summ / col
+# print('Средний балл:', sred, '. Студенты с баллом выше среднего:')
+# for v, k in d.items():
+#     if v > sred:
+#         print(d[v])
