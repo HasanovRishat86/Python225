@@ -2306,6 +2306,430 @@
 # print()
 # hello()
 
+#                                             Занятие № 16
+
+# def bold(fn):
+#     def wrap():
+#         return '<b>' + fn() + '</b>'
+#
+#     return wrap
+#
+#
+# def italic(fn):
+#     def wrap():
+#         return '<i>' + fn() + '</i>'
+#
+#     return wrap
+#
+#
+# @bold
+# @italic
+# def hello():
+#     return 'text'
+#
+#
+# print(hello())
+
+
+# def cnt(fn):
+#     count = 0
+#
+#     def wrap():
+#         nonlocal count
+#         count = count + 1
+#         fn()
+#         print('Вызов функции:', count)
+#     return wrap
+#
+#
+# @cnt
+# def hello():
+#     print('Hello')
+#
+#
+# hello()
+# hello()
+# hello()
+
+# def args_decorator(fn):
+#     def wrap(args1, args2):
+#         print('Данные:', args1, args2)
+#         fn(args1, args2)
+#
+#     return wrap
+#
+#
+# @args_decorator
+# def print_full_name(first, last):
+#     print('Меня зовут:', first, last)
+#
+#
+# print_full_name('Ирина', 'Лаврова')
+
+# def args_decorator(fn):
+#     def wrap(*args, **kwargs):
+#         print('args', args)
+#         print('kwargs', kwargs)
+#         fn(*args, **kwargs)
+#
+#     return wrap
+#
+#
+# @args_decorator
+# def print_full_name(a, b, c, study="Python"):
+#     print(a, b, c, 'изучают', study, '\n')
+#
+#
+# @args_decorator
+# def new_func(q):
+#     print(q)
+#
+# print_full_name('Борис', 'Елизавета', 'Светлана', study='JavaScript')
+# print_full_name('Владимир', 'Екатерина', 'Виктор')
+# new_func('Новая функция')
+
+# def decor(args1, args2):
+#     def args_dec(fn):
+#         def wrap(x, y):
+#             print(args1, x, args2, y, '=', end=' ')
+#             fn(x, y)
+#         return wrap
+#     return args_dec
+#
+#
+# @decor('Сложение:', '+')
+# def summa(a, b):
+#     print(a + b)
+#
+#
+# @decor('Разность:', '-')
+# def sub(a, b):
+#     print(a - b)
+#
+# summa(5, 2)
+# sub(5, 2)
+
+# def multiply(arg):
+#     def my_decorator(func):
+#         def wrap(*args, **kwargs):
+#             return arg * func(*args, **kwargs)
+#
+#         return wrap
+#     return my_decorator
+#
+#
+# @multiply(3)
+# def return_num(num):
+#     return num
+#
+#
+# print('Результат:', return_num(5))
+
+# print(int('100'))
+# print(int('100', 10))
+# print(int('100', 2))
+# print(int('100', 8))
+# print(int('100', 16))
+
+# print(bin(18))  # 0b10010
+# print(oct(18))  # 0o22
+# print(hex(18))  # 0x12
+
+# print(0b10010)
+# print(0o22)
+# print(0x12)
+
+# q = 'Pyt'
+# w = 'hon'
+# e = q + w
+# print(e)
+#
+# print(e * 3)
+# print(e * -3)
+#
+# print(e in 'I am learn Python')
+# print(e in 'I am learn Java')
+
+# s = 'Hello'
+# print(s[1])
+# print(s[-5])
+# print(s[-5:-2])
+# print(s[0:5:2])
+# print(s[::-1])
+
+# s = 'python'
+# s = s[:3] + 't' + s[4:]
+# print(s)
+# def changeCharToStr(s, c_old, c_new):
+#     i = 0
+#     s2 = ''
+#
+#     while i < len(s):
+#         if s[i] == c_old:
+#             s2 = s2 + c_new
+#         else:
+#             s2 = s2 + s[i]
+#         i = i + 1
+#
+#     return s2
+#
+# str1 = 'Я изучаю Nyton. Мне нравиться Nython. Nyton очень интересный язык программирования.'
+# str2 = changeCharToStr(str1, 'N', 'P')
+# print(str1)
+# print(str2)
+
+# print('Привет')
+# print(u'Привет')
+
+# print('I\'m learning\nPython')
+# print('C:\file.txt')
+# print('C:\\file.txt')
+# print(r'C:\file.txt')
+# print(r'C:\file\\'[:-1])
+# print('C:\\file\\')
+# print(r'C:\file' + '\\')
+
+# name = 'Дмитрий'
+# age = 25
+# print(f'Меня зовут {name}. Мне {age}')
+
+# import math
+# print(f'Значение числа pi: {round(math.pi, 2)}')
+# print(f'Значение числа pi: {math.pi:.2f}')
+
+# x = 10
+# y = 5
+# print(f'{x} x {y} / 2 = {x * y / 2}')
+
+# a = 74
+# print(f'{{{a}}}')
+
+# dir_name = 'my_doc'
+# file_name = 'data.txt'
+# print(fr'home\{dir_name}\{file_name}')
+
+# s = 'Hello'
+# print(s)
+#
+# a = '''aaaa'''
+# b = """"bbbb"""
+# print(a)
+
+# s = '''
+# <div>
+#     <a href="#">content</a>
+# </div>
+# '''
+#
+# print(s)
+
+# def square(n):
+#     """Принимает число n, возвращает квадрат числа n"""
+#     a = 2
+#     return n ** 2
+#
+#
+# print(square(5))
+# print(square.__doc__)
+
+# import math as m
+#
+#
+# def cylinder(r, h):
+#     """
+#     Вычисляет площадь цилиндра.
+#
+#     Вычисляет площадь цилиндра на основании заданной высоты и радиуса основания
+#     :param r: положительное число, радиус основания цилиндра
+#     :param h: положительное число, высота цилиндра
+#     :return: положительное число, площадь цилиндра
+#     """
+#     return 2 * m.pi * r * (r + h)
+#
+#
+# print(cylinder(2, 4))
+#                                             Занятие № 17
+
+# print(ord('a'))
+# print(ord('#'))
+# print(ord('к'))
+
+# while True:
+#     n = input('-> ')
+#     if n != '-1':
+#         print(ord(n))
+#     else:
+#         break
+
+# my_str = 'Test string for meee'
+# arr = [ord(x) for x in my_str]
+# print('ASCII коды:', arr)
+# arr = [int(sum(arr) / len(arr))] + arr
+# print('Среднее арифметическое:', arr)
+# arr += [x for x in [ord(x) for x in input('-> ')][:3] if x not in arr]
+# print(arr)
+# if arr[-1] in arr[:-1]:
+#     print('Количество последних элементов:', arr.count(arr[-1]) - 1)
+# arr.sort(reverse=True)
+# print(arr)
+
+# print(chr(97))
+# print(chr(1078))
+
+# a = 122
+# b = 97
+#
+# if a > b:
+#     for i in range(b, a + 1):
+#         print(chr(i), end=' ')
+# else:
+#     for i in range(a, b + 1):
+#         print(chr(i), end=' ')
+
+# print('apple' == 'Apple')
+# print('apple' > 'Apple')  # 97 > 95
+
+# from random import randint
+#
+# short = 7
+# longest = 12
+# min_ascii = 33
+# max_acsii = 126
+#
+#
+# def random_password():
+#     random_length = randint(short, longest)
+#     res = ''
+#     for i in range(random_length):
+#         random_char = chr(randint(min_ascii, max_acsii))
+#         res += random_char
+#     return res
+#
+#
+# print("Ваш случайный пароль:", random_password())
+
+# s = 'hello, WORLD! I am learn Python.'
+# print(s.capitalize())  # Hello, world! i am learn python.
+# print(s.lower())  # hello, world! i am learn python.
+# print(s.upper())  # HELLO, WORLD! I AM LEARN PYTHON.
+# print(s.swapcase())  # HELLO, world! i AM LEARN pYTHON.
+# print(s.title())  # Hello, World! I Am Learn Python.
+
+# s = 'hello, WORLD! I am learn Python.'
+# print(s.count('h', 1, -4))  # кол-во искомых символов
+# print(s.find('Python'))  # возвращает индекс первого совпадения
+# print(s.find('oPython'))  # если подстроки нет, возвращается -1
+
+# string = 'один два'
+# one = string[:string.find(' ')]
+# two = string[string.find(' ') + 1:]
+# print(two + ' ' + one)
+
+# s = 'ab12c59p7dq'
+# digits = []
+# for symbol in s:
+#     if '0123456789'.find(symbol) != -1:
+#         digits.append(int(symbol))
+# print(digits)
+
+# s = 'hello, WORLD! I am learn Python.'
+# print(s.index('Python'))
+# print(s.index('oPython'))
+
+# s = 'Дана ст(рока символов, среди которых есть одна открыв)ающаяся'
+# ind1 = s.index('(')
+# ind2 = s.index(')')
+# print(ind1)
+# print(ind2)
+#
+# print(s[ind1 + 1:ind2])
+# s = 'hello, WORLD! I am learn Python.'
+# print(s.find('l'))
+# print(s.rfind('l'))
+# print(s.index('l'))
+# print(s.rindex('l'))
+
+# s = "Some content in this message has been blocked because the sender isn't in your Safe senders list"
+# item = "s"
+# if s.count(item) == 1:
+#     print(s.find(item))
+# elif s.count(item) >= 2:
+#     print(s.find(item), s.rfind(item))
+
+# s = 'hello, WORLD! I am learn Python.'
+# print(s.endswith('on.'))
+# print(s.endswith('lo', 3, 5))
+#
+# print(s.startswith('hello'))
+# print(s.startswith('I am', 14))
+
+# print('aab123'.isalnum())  # не пустая и состоит из букв или цифр
+# print('er23%3'.isalnum())  #
+#
+# print('ABCabc'.isalpha())  # не пустая и содержит только буквы
+# print('123abc'.isalpha())  # не пустая и содержит только буквы
+#
+# print('123'.isdigit())  # не пустая и содержит только цифры
+# print('asd'.isdigit())
+#
+# print('abc'.islower())  # не пустая и содержит букв. нижний регистр, также может содержать символы и цифры
+# print('abc@34'.islower())
+# print('abc@34eDGH'.islower())
+#
+# print('ABC^'.isupper())  # не пустая и содержит букв. верхний регистр, также может содержать символы и цифры
+
+# print(' \t \n '.isspace())  # строка состоит только из пробельных симв. + табул и перенос на другую строку
+# print(' a '.isspace())
+
+# print('py'.center(10))
+# print('py'.center(11, '-'))
+# print('py'.center(2))
+
+# print('    py'.lstrip())  # py
+# print('py   '.rstrip())  # py
+# print('   py   '.strip())  # py
+
+# print('https://www.pyton.org/'.lstrip('th/sp:'))
+# print('$py.$$$;'.rstrip(';$.'))
+# print('$py.$$$;'.strip(';$.'))
+# print('https://www.pyton.org/'.lstrip('th/sp:').rstrip('/.org'))
+
+# str1 = 'Я изучаю Nython. Мне нравиться Nython. Nython очень интересный язык программирования.'
+# print(str1.replace('Nython', 'Python', 2))
+
+# s = '-'
+# seq = ('a', 'b', 'c')
+# print(s.join(seq))  # a-b-c
+#
+# print('..'.join(['1', '2']))
+# print(':'.join('Hello'))
+
+# print('Строка разделенная пробелами'.split(' '))
+# print('Строка разделенная пробелами'.split())
+# print('www.python.org.ru'.split('.'))
+# print('www.python.org.ru'.rsplit('.'))
+# print('www.python.org.ru'.split('.', 2))
+# print('www.python.org.ru'.rsplit('.', 2))
+#
+# print('www...python...org'.split('.'))
+
+# a = input('->').split()
+# print(a)
+
+# def name(name):
+#     print(f'{name[0]} {name[1][0]}.{name[2][0]}.')
+#
+#
+# a = input('Введите ФИО: ').split()
+# name(a)
+
+# s = 'В строке заменить пробелы символом'
+# # lst = s.split()
+# # print(lst)
+# # st = '*'.join(lst)
+# # print(st)
+#
+# print(s.replace(' ', '*'))
 
 #                                             Занятие № 18
 
@@ -2323,6 +2747,7 @@
 
 # Регулярные выражения
 import re
+
 
 # s = 'Я ищу сов[паден]ия в 2021 го-да. И я их найду в 2 счёта. 45678'
 # reg = '\\.'
@@ -2557,3 +2982,346 @@ import re
 # print(validate_phone('+74994564578'))
 # print(validate_phone('7 (499) 456 45 78'))
 # print(validate_phone('7 (499) 456-45-78'))
+
+
+#                                             Занятие № 28
+
+# class Liquid:
+#     def __init_(self, name, density):
+#         self.name = name
+#         self.density = density
+#
+#     def edit_density(self, val):
+#         self.density = val
+#
+#     def calc_v(self, m):
+#         v = m / self.density
+#         print(f'Объем {m} кг {self.name} равен {v} m^3')
+#
+#     def calc_m(self, v):
+#         m = v * self.density
+#         print(f'Вес {v} м^3 of {self.name} составляет {m} кг.')
+#
+#     def print_info(self):
+#         print(f"Жидкость '{self.name}' (плотность = {self.density}kg/m^3).")
+#
+# class Alcohol(Liquid):
+#     def __init__(self, name, density, strength):
+#         super()._init__(name, density)
+#         self.strength = strength
+#
+#
+# a = Alcohol('Wine', 1064.2, 14)
+# a.print_info()
+#
+# a.edit_density(1000)
+# a.print_info()
+#
+# a.calc_v(300)
+# a.calc_m(0.5)
+
+# Вложеные классы
+
+# class MyOuter:
+#     age = 18
+#
+#
+#     def __init__(self, name):
+#         self.name = name
+#
+#
+#     class MyInner:
+#         def __init__(self, inner_name):
+#             self.inner_name = inner_name
+#
+#
+# out = MyOuter('внешний')
+# inner = out.MyInner('внутренний')
+# print(inner.inner_name)
+
+#                                             Занятие № 30
+
+# class Point3D:
+#     CH = "Координата должна быть числом"
+#     RIGHT = 'Правый операнд должен быть типом Point3D'
+#
+#     def __init__(self, x=0, y=0, z=0):
+#         self.x = x
+#         self.y = y
+#         self.z = z
+#
+#     def __str__(self):
+#         return f"{self.__x}, {self.y}, {self.z}"
+#
+#     @staticmethod
+#     def __check_value(v):
+#         return isinstance(v, int) or isinstance(v, float)
+#
+#     @property
+#     def x(self):
+#         return self.__x
+#
+#     @x.setter
+#     def x(self, value):
+#         if self.__check_value(value):
+#             self.__x = value
+#         else:
+#             print(self.CH)
+#
+#     @property
+#     def y(self):
+#         return self.__y
+#
+#     @y.setter
+#     def y(self, value):
+#         if self.__check_value(value):
+#             self.__y = value
+#         else:
+#             print(self.CH)
+#
+#     @property
+#     def z(self):
+#         return self.__z
+#
+#     @z.setter
+#     def z(self, value):
+#         if self.__check_value(value):
+#             self.__z = value
+#         else:
+#             print(self.CH)
+#
+#     def __add__(self, other):
+#         if not isinstance(other, Point3D):
+#             raise ValueError(self.RIGHT)
+#         else:
+#             return Point3D(self.__x + other.x, self.__y + other.y, self.__z + other.z)
+#
+#     def __sub__(self, other):
+#         if not isinstance(other, Point3D):
+#             raise ValueError(self.RIGHT)
+#         else:
+#             return Point3D(self.__x - other.x, self.__y - other.y, self.__z - other.z)
+#
+#     def __mul__(self, other):
+#         if not isinstance(other, Point3D):
+#             raise ValueError(self.RIGHT)
+#         else:
+#             return Point3D(self.__x * other.x, self.__y * other.y, self.__z * other.z)
+#
+#     @staticmethod
+#     def __check0(exemplar):
+#         if exemplar.x == 0 or exemplar.y == 0 or exemplar.z == 0:
+#             raise ZeroDivisionError('Ни одна из координат второго операнда не должна быть равна 0')
+#
+#     def __truediv__(self, other):
+#         if not isinstance(other, Point3D):
+#             raise ValueError(self.RIGHT)
+#         self.__check0(other)
+#         return Point3D(self.__x / other.x, self.__y / other.y, self.__z / other.z)
+#
+#     def __eq__(self, other):
+#         if not isinstance(other, Point3D):
+#             raise ValueError(self.RIGHT)
+#         return self.__x == other.x and self.__y == other.y and self.__z == other.z
+#
+#     def __getitem__(self, item):
+#         if not isinstance(item, str):
+#             raise ValueError('Ключ должен быть строкой')
+#         elif item == 'x':
+#             return self.__x
+#         elif item == 'y':
+#             return self.__y
+#         elif item == 'z':
+#             return self.__z
+#         else:
+#             print('Неверно задан ключ')
+#
+#     def __setitem__(self, key, value):
+#         if not isinstance(key, str):
+#             raise ValueError('Ключ должен быть строкой')
+#         if self.__check_value(value):
+#             if key == 'x':
+#                 self.__x = value
+#             elif key == 'y':
+#                 self.__y = value
+#             elif key == 'z':
+#                 self.__z = value
+#         else:
+#             print('Координаты должны быть числами')
+#
+#
+# pt1 = Point3D(12, 15, 18)
+# pt2 = Point3D(6, 3, 9)
+# print('Координаты 1-й точки: ', pt1)
+# print('Координаты 2-й точки: ', pt2)
+#
+# pt3 = pt1 + pt2
+# print(f'Сложение координат: ({pt3})')
+#
+# pt4 = pt1 - pt2
+# print(f'Разность координат: ({pt4})')
+#
+# pt5 = pt1 * pt2
+# print(f'Произведение координат: ({pt5})')
+#
+# pt6 = pt1 / pt2
+# print(f'Частное координат: ({pt6})')
+#
+# print(f'Равенство координат: ', pt1 == pt2)
+#
+# print('x = ', pt1['x'], 'x1 =', pt2['x'])
+# print('y = ', pt1['y'], 'y1 =', pt2['y'])
+# print('z = ', pt1['z'], 'z1 =', pt2['z'])
+#
+# pt1['x'] = 20
+# print('Запись значение в координату x:', pt1['x'])
+
+
+# Полиморфизм
+
+# class Rectangle:
+#     def __init__(self, w, h):
+#         self.w = w
+#         self.h = h
+#
+#     def get_perimetr(self):
+#         return 2 * (self.w + self.h)
+#
+#
+# class Square:
+#     def __init__(self, a):
+#         self.a = a
+#
+#     def get_perimetr(self):
+#         return 4 * self.a
+#
+#
+# class Triangle:
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def get_perimetr(self):
+#         return self.a + self.b + self.c
+#
+#
+# r1 = Rectangle(1, 2)
+# r2 = Rectangle(3, 4)
+# # print(r1.get_per_rect(), r2.get_per_rect())
+#
+# s1 = Square(10)
+# s2 = Square(20)
+# # print(s1.get_per_sq(), s2.get_per_sq())
+#
+# t1 = Triangle(1, 2, 3)
+# t2 = Triangle(4, 5, 6)
+#
+# shape = [r1, r2, s1, s2, t1, t2]
+# for g in shape:
+#     print(g.get_perimetr())
+#     # if isinstance(g, Rectangle):
+#     #     print(g.get_per_rect())
+#     # else:
+#     #     print(g.get_per_sq())
+
+# class Number:
+#     def __init__(self, value):
+#         self.value = value
+#
+#     def total(self, a):
+#         return self.value + int(a)
+#
+#
+# class Text:
+#     def __init__(self, value):
+#         self.value = value
+#
+#     def total(self, a):
+#         return len(self.value + str(a))  #  'Python' + '35' = 'Python35'
+#
+#
+# t1 = Number(10)
+# t2 = Text('Python')
+# print(t1.total(35))
+# print(t2.total(35))
+
+# class Cat:
+#      def __init__(self, name, age):
+#          self.name = name
+#          self.age = age
+#
+#      def info(self):
+#          return f'Я кот. Меня зовут {self}'
+#
+#      def make_sound(self, a):
+#          return self.value + str(a)
+#
+#
+# class Dog:
+#     def __info__(self, value):
+#         self.value = value
+#
+#     def make_sound(self, a):
+#         return self.value + str(a)
+#
+#
+# t1 = Cat()
+# t2 = Dog()
+
+
+# class Human:
+#     def __init__(self, lastname, name, age):
+#         self.name = name
+#         self.lastname = lastname
+#         self.age = age
+#
+#     def info(self):
+#         print(f'\n{self.lastname} {self.name} {self.age} ', end='' )
+#
+#
+# class Student(Human):
+#     def __init__(self, lastname, name, age, direction, group, raiting):
+#         super().__init__(lastname, name, age)
+#         self.direction = direction
+#         self.group = group
+#         self.raiting = raiting
+#
+#     def info(self):
+#         super().info()
+#         print(f'{self.direction} {self.group} {self.raiting} ', end='')
+#
+#
+# class Teacher(Human):
+#     def __init__(self, lastname, name, age, spec, exp):
+#         super().__init__(lastname, name, age)
+#         self.exp = exp
+#         self.spec = spec
+#
+#     def info(self):
+#         super().info()
+#         print(f'{self.spec} {self.exp} ', end='')
+#
+#
+# class Graduate(Student):
+#     def __init__(self, lastname, name, age, direction, group, raiting, theme):
+#         super().__init__(lastname, name, age, direction, group, raiting)
+#         self.theme = theme
+#
+#     def info(self):
+#         super().info()
+#         print(f'{self.theme} ', end='')
+#
+# group = [
+#     Student("Батодалаев", "Даши", 16, "ГК", "Web_011", 5),
+#     Student("Загидуллин", "Линар", 32, "РПО", "PD_011", 5),
+#     Graduate("Шугани", "Сергей", 15, "РПО", "PD_011", 5, "Защита персональных данных"),
+#     Teacher("Даньшин", "Андрей", 38, "Астрофизика", 110),
+#     Student("Маркин", "Даниил", 17, "ГК", "Python_011", 5),
+#     Teacher("Башкиров", "Алексей", 45, "Разработка приложений", 20)
+# ]
+#
+# for i in group:
+#     i.info()
+
+
